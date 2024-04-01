@@ -1,0 +1,43 @@
+# Project: GymManagement
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o Uyeler.o Tedarikciler.o KisiselBilgiler.o Calisan.o VeritabaniManager.o
+LINKOBJ  = main.o Uyeler.o Tedarikciler.o KisiselBilgiler.o Calisan.o VeritabaniManager.o
+LIBS     = -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib" -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc -L"C:/Program Files/MySQL/MySQL Server 8.0/lib" -L"C:/Program Files/MySQL/Connector C++ 8.0/lib64" -lmysql
+INCS     = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Program Files/MySQL/MySQL Server 8.0/include/mysql" -I"C:/Program Files/MySQL/MySQL Server 8.0/include" -I"C:/Program Files/MySQL/Connector C++ 8.0/include" -I"C:/Program Files/MySQL/Connector C++ 8.0/include/mysql"
+CXXINCS  = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++" -I"C:/Program Files/MySQL/MySQL Server 8.0/include/mysql" -I"C:/Program Files/MySQL/MySQL Server 8.0/include" -I"C:/Program Files/MySQL/Connector C++ 8.0/include" -I"C:/Program Files/MySQL/Connector C++ 8.0/include/mysql"
+BIN      = GymManagement.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+DEL      = C:\Program Files (x86)\Embarcadero\Dev-Cpp\devcpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Uyeler.o: Uyeler.cpp
+	$(CPP) -c Uyeler.cpp -o Uyeler.o $(CXXFLAGS)
+
+Tedarikciler.o: Tedarikciler.cpp
+	$(CPP) -c Tedarikciler.cpp -o Tedarikciler.o $(CXXFLAGS)
+
+KisiselBilgiler.o: KisiselBilgiler.cpp
+	$(CPP) -c KisiselBilgiler.cpp -o KisiselBilgiler.o $(CXXFLAGS)
+
+Calisan.o: Calisan.cpp
+	$(CPP) -c Calisan.cpp -o Calisan.o $(CXXFLAGS)
+
+VeritabaniManager.o: VeritabaniManager.cpp
+	$(CPP) -c VeritabaniManager.cpp -o VeritabaniManager.o $(CXXFLAGS)
